@@ -64,7 +64,19 @@
                 }],
                 "columns": [
                     { "data": "id", "name": "Id", "autoWidth": true },
-                    { "data": "isActive", "name": "IsActive", "autoWidth": true },
+
+                    {
+                        data: "isActive",
+                        render: function (data, type, row) {
+                            if (data === true) {
+                                return '<input type="checkbox" class="editor-active" onclick="return false;" checked>';
+                            } else {
+                                return '<input type="checkbox" onclick="return false;" class="editor-active">';
+                            }
+                        },
+                        className: "dt-body-center text-center"
+                    },
+               
                     { "data": "taskName", "name": "TaskName", "autoWidth": true },
                     { "data": "description", "name": "Description", "autoWidth": true },
                     { "data": "lastUpdate", "name": "LastUpdate", "autoWidth": true },
