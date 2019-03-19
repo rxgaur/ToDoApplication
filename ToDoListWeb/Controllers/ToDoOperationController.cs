@@ -24,9 +24,32 @@ namespace ToDoListWeb.Controllers
         // GET: ToDoOperation
         public async Task<IActionResult> Index()
         {
-            var userId = User.Identity.GetUserId();
-            return View(await _toDoOperationService.GetAllToDoByUserId(userId));
+            return View();
         }
+        public async Task<IActionResult> LoadData()
+        {
+            try
+            {
+               
+                int recordsTotal = 0;
+
+                // Getting all Customer data  
+                var userId = User.Identity.GetUserId();
+                var result = _toDoOperationService.GetAllToDoByUserId(userId).Result;
+                recordsTotal = result.Count();
+           
+            
+                //Returning Json Data  
+                return Json(new { recordsFiltered = recordsTotal, recordsTotal = recordsTotal, data = result });
+
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+        }
+
 
         // GET: ToDoOperation/Details/5
         public async Task<IActionResult> Details(int? id)
