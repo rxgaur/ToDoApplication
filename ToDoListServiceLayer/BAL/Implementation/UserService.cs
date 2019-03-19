@@ -1,10 +1,9 @@
-﻿using System;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
-using ToDoListWeb.BAL.Interface;
-using ToDoListWeb.Models;
+using ToDoListDomain.Models;
+using ToDoListServiceLayer.BAL.Interface;
 
-namespace ToDoListWeb.BAL.Implementation
+namespace ToDoListServiceLayer.BAL.Implementation
 {
     public class UserService : IUserService
     {

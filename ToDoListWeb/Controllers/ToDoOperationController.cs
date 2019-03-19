@@ -2,12 +2,12 @@
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using ToDoListWeb.DAL.EF;
 using Microsoft.AspNet.Identity;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using Microsoft.AspNetCore.Authorization;
-using ToDoListWeb.BAL.Interface;
+using ToDoListDomain.Models;
+using ToDoListServiceLayer.BAL.Interface;
 
 namespace ToDoListWeb.Controllers
 {
@@ -56,7 +56,7 @@ namespace ToDoListWeb.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("TaskName,Description,IsActive,LastUpdate,Id")] ToDo toDo)
+        public async Task<IActionResult> Create([Bind("TaskName,Description,IsActive,Id")] ToDo toDo)
         {
             if (!ModelState.IsValid) return View(toDo);
             toDo.LastUpdate = DateTime.UtcNow;

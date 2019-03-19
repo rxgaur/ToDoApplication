@@ -1,7 +1,8 @@
 ﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using ToDoListWeb.Models;
+using ToDoListDomain.Models;
+
 
 namespace ToDoListWeb.Controllers
 {

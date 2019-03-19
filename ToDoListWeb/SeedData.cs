@@ -4,7 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.DependencyInjection;
-using ToDoListWeb.DAL.EF;
+using ToDoListDAL.EF;
+using ToDoListDomain.Models;
 
 namespace ToDoListWeb
 {

@@ -1,8 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
-using ToDoListWeb.Models;
 
-namespace ToDoListWeb.DAL.EF
+namespace ToDoListDomain.Models
 {
     public class ToDo : BaseEntity
     {

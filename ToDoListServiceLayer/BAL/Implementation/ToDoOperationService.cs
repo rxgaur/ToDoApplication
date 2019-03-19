@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using ToDoListWeb.BAL.Interface;
-using ToDoListWeb.DAL.EF;
+using ToDoListDAL.EF;
+using ToDoListDomain.Models;
+using ToDoListServiceLayer.BAL.Interface;
 
-namespace ToDoListWeb.BAL.Implementation
+namespace ToDoListServiceLayer.BAL.Implementation
 {
     public class ToDoOperationService : IToDoOperationService
     {
@@ -77,8 +77,8 @@ namespace ToDoListWeb.BAL.Implementation
         }
 
         // POST: ToDoOperation/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
+        //[HttpPost, ActionName("Delete")]
+        //[ValidateAntiForgeryToken]
         public async Task<bool> DeleteConfirmedTodo(int id)
         {
             try

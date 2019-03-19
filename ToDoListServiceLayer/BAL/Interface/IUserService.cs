@@ -1,8 +1,8 @@
 ﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
-using ToDoListWeb.Models;
+using ToDoListDomain.Models;
 
-namespace ToDoListWeb.BAL.Interface
+namespace ToDoListServiceLayer.BAL.Interface
 {
     public interface IUserService
     {

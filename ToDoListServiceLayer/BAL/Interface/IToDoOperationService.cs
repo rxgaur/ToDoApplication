@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using ToDoListWeb.DAL.EF;
+using ToDoListDomain.Models;
 
-namespace ToDoListWeb.BAL.Interface
+namespace ToDoListServiceLayer.BAL.Interface
 {
     public interface IToDoOperationService
     {

@@ -1,8 +1,9 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using ToDoListDomain.Models;
 
-namespace ToDoListWeb.DAL.EF
+namespace ToDoListDAL.EF
 {
     public class ToDoListDbContext : IdentityDbContext<IdentityUser>
     {

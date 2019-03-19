@@ -3,7 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2000
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDoListWeb", "ToDoListWeb\ToDoListWeb.csproj", "{22731D8C-B82D-4083-98FF-BCC77B8CC43B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToDoListWeb", "ToDoListWeb\ToDoListWeb.csproj", "{22731D8C-B82D-4083-98FF-BCC77B8CC43B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDoListDAL", "ToDoListDAL\ToDoListDAL.csproj", "{F0D91877-8FA7-4934-A3C4-E23D3B4F48DB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDoListDomain", "ToDoListDomain\ToDoListDomain.csproj", "{1FFC3786-5D2A-4B68-A985-8D19C75FC3D1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDoListServiceLayer", "ToDoListServiceLayer\ToDoListServiceLayer.csproj", "{B8BFB34B-FA0F-4753-8C8E-F0282BD7590B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +21,18 @@ Global
 		{22731D8C-B82D-4083-98FF-BCC77B8CC43B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{22731D8C-B82D-4083-98FF-BCC77B8CC43B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{22731D8C-B82D-4083-98FF-BCC77B8CC43B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F0D91877-8FA7-4934-A3C4-E23D3B4F48DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F0D91877-8FA7-4934-A3C4-E23D3B4F48DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F0D91877-8FA7-4934-A3C4-E23D3B4F48DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F0D91877-8FA7-4934-A3C4-E23D3B4F48DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1FFC3786-5D2A-4B68-A985-8D19C75FC3D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1FFC3786-5D2A-4B68-A985-8D19C75FC3D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1FFC3786-5D2A-4B68-A985-8D19C75FC3D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1FFC3786-5D2A-4B68-A985-8D19C75FC3D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B8BFB34B-FA0F-4753-8C8E-F0282BD7590B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8BFB34B-FA0F-4753-8C8E-F0282BD7590B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8BFB34B-FA0F-4753-8C8E-F0282BD7590B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8BFB34B-FA0F-4753-8C8E-F0282BD7590B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

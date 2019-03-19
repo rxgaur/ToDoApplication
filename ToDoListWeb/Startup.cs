@@ -13,9 +13,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
-using ToDoListWeb.BAL.Implementation;
-using ToDoListWeb.BAL.Interface;
-using ToDoListWeb.DAL.EF;
+using ToDoListDAL.EF;
+using ToDoListServiceLayer.BAL.Implementation;
+using ToDoListServiceLayer.BAL.Interface;
 
 namespace ToDoListWeb
 {
@@ -51,6 +51,7 @@ namespace ToDoListWeb
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.TryAddScoped<IUserService, UserService>();
+            services.TryAddScoped<IToDoOperationService, ToDoOperationService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
