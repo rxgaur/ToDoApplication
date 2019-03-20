@@ -1,11 +1,9 @@
-﻿using System;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNet.Identity;
-using System.Linq;
-using System.Security.Cryptography.X509Certificates;
+﻿using Microsoft.AspNet.Identity;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using System;
+using System.Linq;
+using System.Threading.Tasks;
 using ToDoListDomain.Models;
 using ToDoListServiceLayer.BAL.Interface;
 
@@ -30,15 +28,15 @@ namespace ToDoListWeb.Controllers
         {
             try
             {
-               
+
                 int recordsTotal = 0;
 
                 // Getting all Customer data  
                 var userId = User.Identity.GetUserId();
                 var result = _toDoOperationService.GetAllToDoByUserId(userId).Result;
                 recordsTotal = result.Count();
-           
-            
+
+
                 //Returning Json Data  
                 return Json(new { recordsFiltered = recordsTotal, recordsTotal = recordsTotal, data = result });
 

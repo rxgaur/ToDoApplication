@@ -108,25 +108,6 @@
             }
         }
 
-
-        function Delete(id)
-    {
-            var url = '@Url.Content("~/")' + "ToDoOperation/Delete";
-
-            $.post(url, { ID: id }, function (data)
-                {
-                    if (data)
-                    {
-                        oTable = $('#todolist').DataTable();
-                        oTable.draw();
-                    }
-                    else
-                    {
-                        alert("Something Went Wrong!");
-                    }
-                });
-    }
-
 </script>
 
 

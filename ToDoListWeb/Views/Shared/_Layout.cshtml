@@ -45,7 +45,7 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                  
+
                     @if (SignInManager.IsSignedIn(User))
                     {
                         <li><a asp-area="" asp-controller="ToDoOperation" asp-action="Index">To do List</a></li>
@@ -54,14 +54,8 @@
                     {
                         <li><a asp-area="" asp-controller="Account" asp-action="Login">Login</a></li>
                     }
-
-                    @if (SignInManager.IsSignedIn(User))
-                    {
-                       <li> <form id="logout" asp-controller="Account" role="form" asp-action="Logout">
-                            <input type="submit" value="Logout" class="Logout" />
-                        </form>  </li>
-                    }
                 </ul>
+                <partial name="_LoginPartial" />
             </div>
         </div>
     </nav>
