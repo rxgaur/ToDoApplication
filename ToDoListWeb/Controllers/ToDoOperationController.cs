@@ -102,6 +102,26 @@ namespace ToDoListWeb.Controllers
             return View(toDo);
         }
 
+        [HttpPost]
+        //[ValidateAntiForgeryToken]
+        public async Task<IActionResult> ToggleEdit(int id)
+        {
+            var toDo = await _toDoOperationService.GetToDoForEditById(id);
+            if (toDo == null)
+            {
+                return NotFound();
+            }
+
+            toDo.LastUpdate = DateTime.UtcNow;
+            toDo.UserId = User.Identity.GetUserId();
+            toDo.IsActive = !toDo.IsActive;
+            var todo = await _toDoOperationService.UpdateToDoWithEntity(id, toDo);
+            if (todo == null)
+                return NotFound();
+
+            return RedirectToAction(nameof(Index));
+        }
+
         // POST: ToDoOperation/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.

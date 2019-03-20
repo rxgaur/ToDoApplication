@@ -44,69 +44,77 @@
 <script>
 
 
-        $(document).ready(function ()
-        {
-            $("#todolist").DataTable({
-                "processing": true, // for show progress bar
-                "serverSide": true, // for process server side
-                "filter": true, // this is for disable filter (search box)
-                "orderMulti": false, // for disable multiple column at once
-                "ajax": {
-                    "url": "/ToDoOperation/LoadData",
-                    "type": "GET",
-                    "datatype": "json"
-                },
-                "columnDefs":
+    $(document).ready(function () {
+        $("#todolist").DataTable({
+            "processing": true, // for show progress bar
+            "serverSide": true, // for process server side
+            "filter": true, // this is for disable filter (search box)
+            "orderMulti": false, // for disable multiple column at once
+            "ajax": {
+                "url": "/ToDoOperation/LoadData",
+                "type": "GET",
+                "datatype": "json"
+            },
+            "columnDefs":
                 [{
                     "targets": [0],
                     "visible": false,
                     "searchable": false
                 }],
-                "columns": [
-                    { "data": "id", "name": "Id", "autoWidth": true },
+            "columns": [
+                { "data": "id", "name": "Id", "autoWidth": true },
 
-                    {
-                        data: "isActive",
-                        render: function (data, type, row) {
-                            if (data === true) {
-                                return '<input type="checkbox" class="editor-active" onclick="return false;" checked>';
-                            } else {
-                                return '<input type="checkbox" onclick="return false;" class="editor-active">';
-                            }
-                        },
-                        className: "dt-body-center text-center"
-                    },
-               
-                    { "data": "taskName", "name": "TaskName", "autoWidth": true },
-                    { "data": "description", "name": "Description", "autoWidth": true },
-                    { "data": "lastUpdate", "name": "LastUpdate", "autoWidth": true },
-                    {
-                        "render": function (data, type, full, meta)
-                        { return '<a class="btn btn-info" href="/ToDoOperation/Edit/' + full.id + '">Edit</a>'; }
-                    },
-                    {
-                        data: null, render: function (data, type, row)
-                        {
-                            return "<a href='#' class='btn btn-danger' onclick=DeleteData('" + row.id + "'); >Delete</a>";
+                {
+                    data: "isActive",
+                    render: function (data, type, row) {
+                        console.log(row);
+                        if (data === true) {
+                            return "<input type='checkbox' class='editor-active' onclick=todocheckboxtoggle('" + row.id + "'); checked>";
+                        } else {
+                            return "<input type='checkbox' class='editor-active' onclick=todocheckboxtoggle('" + row.id + "');>";
                         }
                     },
-                ]
+                    className: "dt-body-center text-center"
+                },
 
-            });
+                { "data": "taskName", "name": "TaskName", "autoWidth": true },
+                { "data": "description", "name": "Description", "autoWidth": true },
+                { "data": "lastUpdate", "name": "LastUpdate", "autoWidth": true },
+                {
+                    "render": function (data, type, full, meta) { return '<a class="btn btn-info" href="/ToDoOperation/Edit/' + full.id + '">Edit</a>'; }
+                },
+                {
+                    data: null, render: function (data, type, row) {
+                        return "<a href='#' class='btn btn-danger' onclick=DeleteData('" + row.id + "'); >Delete</a>";
+                    }
+                },
+            ]
+
         });
+    });
 
 
-    function DeleteData(id)
-        {
-            if (confirm("Are you sure you want to delete ...?"))
-            {
-                Delete(id);
-            }
-            else
-            {
-                return false;
-            }
+    function DeleteData(id) {
+        if (confirm("Are you sure you want to delete ...?")) {
+            Delete(id);
         }
+        else {
+            return false;
+        }
+    }
+
+    function todocheckboxtoggle(id) {
+        console.log(id);
+        $.ajax({
+                method: "Post",
+            url: "ToDoOperation/ToggleEdit",
+            data: {id : id}
+         
+            })
+            .done(function( msg ) {
+                alert( "Data Saved " );
+            });
+    }
 
 </script>
 
